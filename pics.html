@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cola Unicanal y Población Infinita</title>
+
+    <link rel="stylesheet" href="estlo/style.css">
+    <link rel="icon" href="ico/ru.ico" type="image/x-icon">
+</head>
+<body style=" background-image: url('img/backRickandMorty.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+  
+
+    <header class="header">
+
+        <div class="contenedor" style="align-items: center;">
+            <div class="barra">
+
+                <a href="index.html" class="logo">
+                    <h1 class="logo__nombre no-margin centrar-texto">Teoria <span class="logo__bold">De Colas</span></h1>
+                </a>
+                <br>
+                
+                    <button class="boton_navegacion" onclick="location.href='pics.html'" style="background-color: #4CAF50;">Cola Unicanal y Población Infinita</button>
+                    <button class="boton_navegacion" onclick="location.href='picm.html'" style="background-color: #4CAF50;">Colas Multicanal y Población Infinita</button>
+                    <button class="boton_navegacion" onclick="location.href='pfcs.html'" style="background-color: #4CAF50;">Cola Monocanal Población Finita</button>
+                    <button class="boton_navegacion" onclick="location.href='pfcm.html'" style="background-color: #4CAF50;">Colas Multicanal Población Finita</button>
+                
+                  
+            </div>
+      
+        </div>
+        
+       
+    </header>
+    <br>
+    <br>
+    <h2>Cola Unicanal y Población Infinita (M/M/1: FIFO/Infinito/Infinito)</h2>
+    <main class="contenedor">
+        <h3>Ingreso de datos</h3>
+
+
+        <form class="formulario" onsubmit="return false">
+            <div class="campo">
+                <label class="campo__label" for="lambda">Tasa de llegada λ: </label>                    
+                <input 
+                    class="campo__field"
+                    id="lambda" 
+                    type="number" 
+                    step="any"
+                    placeholder="Ingrese el valor"
+                >
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="miu">Tasa de servicio μ:</label>                    
+                <input 
+                    class="campo__field"
+                    id="miu" 
+                    type="number" 
+                    step="any"
+                    placeholder="Ingrese el valor"
+                >
+            </div>
+
+        
+            <div class="campo">                
+                <input type="submit" value="calcular" class="boton boton--secundario" id="boton-pics">
+            </div>
+
+        </form>
+
+
+        <h3>Resultados:</h3>
+        <form class="formulario_respuestas" onsubmit="return false" id="formulario_respuestas" visible = false visibility = "hidden">
+
+            <!--PRIMERA FORMULA-->
+
+            <p class="formulario_respuestas__p">
+                Probabilidad de: Hallar el sistema ocupado, Utilización, esperar a ser atentidos
+            </p>
+
+      
+
+            <div class="campo">
+                <label class="campo__label" for="">P =</label>    
+                <label class="campo__label" for="" id="respuesta_ro"> </label>                
+                
+            </div>
+
+
+            <!--SEGUNDA FORMULA-->
+            
+            <p class="formulario_respuestas__p">
+                Probabilidad de: Hallar el sistema vacío, no esperar 
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">P<sub>0</sub> =</label> 
+                <label class="campo__label" for="" id="respuesta_ro0"> </label>                   
+                
+
+            </div>
+
+
+            <!--Tercera Formula-->
+            <p class="formulario_respuestas__p">
+                Probabilidad de n clientes dentro del sistema
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">n</label>                    
+                
+                <input 
+                    class="campo__field"
+                    id="valorN" 
+                    type="number" 
+                    placeholder="Ingrese el valor de n"
+                >
+
+                <div class="campo">                
+                    <input type="submit" value="calcular" class="boton boton--secundario" id="btnRespuestaPn">
+                </div>
+
+                <label class="campo__label" for="llegada">P<sub>n</sub> =</label>   
+                <label class="campo__label" for="" id="respuesta_Pn"> </label>   
+                
+            </div>
+
+
+             <!--Cuarta Formula-->
+
+             <p class="formulario_respuestas__p">
+                Número esperado de clientes en el sistema
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">L =</label>                    
+                <label class="campo__label" for="" id="respuesta_L"> </label> 
+            </div>
+
+            <!--Quinta Formula-->
+
+            <p class="formulario_respuestas__p">
+                Número esperado de clientes en la cola
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">L<sub>q</sub> =</label> 
+                <label class="campo__label" for="" id="respuesta_Lq"> </label>                    
+                
+            
+            </div>
+
+
+            <!--Sexta Formula-->
+
+            <p class="formulario_respuestas__p">
+                Número esperado de clientes en la cola
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">L<sub>n</sub> =</label>                    
+                <label class="campo__label" for="" id="respuesta_Ln"> </label>   
+                
+            </div>
+
+
+              <!--Septima Formula-->
+
+            <p class="formulario_respuestas__p">
+                 Tiempo esperado en el sistema
+            </p>
+
+            <div class="formulario_respuestas__img">
+            </div>
+
+            <div class="campo">
+                <label class="campo__label" for="llegada">W = </label>   
+                <label class="campo__label" for="" id="respuesta_W"> </label>                 
+                
+                
+            </div>
+
+
+            <!--Octava Formula-->
+
+            <p class="formulario_respuestas__p">
+                Tiempo esperado en cola
+           </p>
+
+           <div class="formulario_respuestas__img">
+           </div>
+
+           <div class="campo">
+               <label class="campo__label" for="llegada">W<sub>q</sub> =</label>                    
+               <label class="campo__label" for="" id="respuesta_Wq"> </label>  
+           </div>
+
+
+           <!--Novena Formula-->
+
+           <p class="formulario_respuestas__p">
+            Tiempo esperado en cola para colas no vacías
+       </p>
+
+       <div class="formulario_respuestas__img">
+       </div>
+
+       <div class="campo">
+           <label class="campo__label" for="llegada">W<sub>n</sub> =</label>             
+           <label class="campo__label" for="" id="respuesta_Wn"> </label>  
+           
+           
+       </div>
+
+           
+
+            
+
+        </form>
+        
+    </main>
+
+
+        <footer class="footer">
+            <div class="contenedor">
+            
+                <a href="index.html" class="logo">
+                        <h1 class="logo__nombre no-margin centrar-texto">TEORIA<span class="logo__bold">DeCOLAS</span></h1>
+                </a>
+                
+            </div>
+        </footer>
+       
+        <script src="js/PICS.js"></script>
+        <script>
+            if (window.location.pathname === '/pics.html') {
+              window.history.replaceState(null, null, '/');
+            }
+          </script>
+          
+</body>
+</html>
